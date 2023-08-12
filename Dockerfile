@@ -18,7 +18,6 @@ RUN apt-get update \
 
 WORKDIR /app
 COPY requirements.txt requirements.txt
-COPY packages.txt packages.txt
 
 RUN xargs -a packages.txt apt-get install --yes
 
