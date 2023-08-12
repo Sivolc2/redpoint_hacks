@@ -25,3 +25,4 @@ with tabs[0]:
         # if not user_input:
         #     user_input = prefilled
         submit_clicked = st.form_submit_button("Build visualization")
+# jupyter nbconvert --to script *.ipynb

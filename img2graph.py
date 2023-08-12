@@ -88,7 +88,7 @@ def print_top(measure, n=5):
 
 if __name__ == "__main__":
     character_locs = read_character_locations("./data/pride_and_prejudice.tokens")
-    character_names = get_character_names("./data/pride_and_prejudice.tokens")
+    character_names = get_character_names("./data/pride_and_prejudice.book")
     nodes, edges = get_character_coocurrence_counts(character_names, character_locs, window=25)
     G = create_graph(nodes, edges)
     display_graph(G)
