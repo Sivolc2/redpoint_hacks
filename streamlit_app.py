@@ -17,7 +17,7 @@ openai_api_key = st.write(
 )
 
 # Existing imports and setup
-# tabs = st.tabs(["Product Search", "QA", "Map"])
+tabs = st.tabs(["Visualization"])
 
 with tabs[0]:
     with st.form(key="form"):
