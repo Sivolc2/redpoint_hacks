@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import replicate
 
 import streamlit as st
 
