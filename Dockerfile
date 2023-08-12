@@ -35,7 +35,7 @@ ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 RUN node --version
 RUN npm --version
 RUN npm install mermaid
-
+    
 EXPOSE 8501
 
 COPY . .
