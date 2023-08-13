@@ -73,8 +73,8 @@ my_html = """
                         E[<img src='https://replicate.delivery/pbxt/ER8RVkL3a6qdGhZPDqkzlEEKsgi14SG8lV9PE9YfGCkllvsIA/out-0.png' width='250' height='250'>]
                         A-->B
                         B-->C
-                        C-->D
-                        D-->E
+                        B-->D
+                        B-->E
                 `
                 var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
             </script>
