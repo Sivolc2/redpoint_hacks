@@ -99,7 +99,7 @@ with tabs[1]:
             var insertSvg = function(svgCode, bindFunctions) {
             element.innerHTML = svgCode;
             };
-            var graphDefinition = `graph LR; Nodetext-->SomeIcon(<img src='https://store.nytimes.com/cdn/shop/products/notebook-chambray_1024x1024.jpg?v=1571439076' width='40' height='40' />)`;
+            var graphDefinition = `graph LR; Nodetext-->SomeIcon(<img src='https://replicate.delivery/pbxt/Vtnuf8efETVX1pzCb4y1vRT7ogbIziEiViFRXMsD30tzg7yiA/out-0.png' width='40' height='40' />)`;
             var graphDefinition2; // This variable is declared but not used in your provided script.
             var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
         </script>
@@ -107,6 +107,7 @@ with tabs[1]:
         </body>
         </html>
     """
+    # <img src="" alt="0" style="width: 1038px;">
     html(my_html)
 #     graph_definition = f"""graph LR; Systemstart-->SomeIcon(<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/test.png' width='50' height='50' />)"""
 #     render_mermaid_with_images(graph_definition)
