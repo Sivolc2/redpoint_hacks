@@ -10,7 +10,7 @@ pandas
 matplotlib
 networkx
 replicate
-webbrowser
+# webbrowser
 # openpyxl
 # mermaid
 # mapbox
