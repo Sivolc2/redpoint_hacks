@@ -81,6 +81,5 @@ with tabs[0]:
                     }};                    
             """ + graph_def_script
 
-            
-            with tabs[1]:
-                html(my_html)
+            print('Running', my_html)
+            html(my_html)
