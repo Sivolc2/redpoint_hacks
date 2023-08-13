@@ -54,8 +54,12 @@ with tabs[0]:
                     graph_relations.append(f"A{idx-1}-->A{idx}")
             
             graph_definition = ";\n".join(graph_nodes + graph_relations)
-
             # Construct the graph in HTML
+            graph_def_script = f"""var graphDefinition = `{graph_definition}`;var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
+                </script>
+                </body>
+                </html>"""
+            
             my_html = f"""
                 <!DOCTYPE html>
                 <html lang="en">
@@ -69,17 +73,13 @@ with tabs[0]:
                 <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
                 <script type="text/javascript">
                     var mermaidAPI = mermaid.mermaidAPI;
-                    mermaidAPI.initialize({ startOnLoad: false });
+                    mermaidAPI.initialize({{ startOnLoad: false }});
                     var element = document.getElementById("app");
-                    var insertSvg = function(svgCode, bindFunctions) {
+                    var insertSvg = function(svgCode, bindFunctions) {{
                         element.innerHTML = svgCode;
-                    };
-                    var graphDefinition = `{graph_definition}`;
-                    var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
-                </script>
-                </body>
-                </html>
-            """
+                    }};                    
+            """ + graph_def_script
+
             
             with tabs[1]:
                 html(my_html)
