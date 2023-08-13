@@ -31,7 +31,7 @@ openai_api_key = st.write(
 )
 
 # Existing imports and setup
-tabs = st.tabs(["Input", "Visualization"])
+tabs = st.tabs(["Visualization"])
 
 with tabs[0]:
     with st.form(key="form"):
@@ -46,15 +46,15 @@ with tabs[1]:
     render_mermaid_with_images(graph_definition)
 
 
-# # Define your javascript
-# my_js = """
-# alert("Hello World");
-# """
+# Define your javascript
+my_js = """
+alert("Hello World");
+"""
 
-# # Wrapt the javascript as html code
-# my_html = f"<script>{my_js}</script>"
+# Wrapt the javascript as html code
+my_html = f"<script>{my_js}</script>"
 
-# # Execute your app
-# st.title("Javascript example")
-# html(my_html)
+# Execute your app
+st.title("Javascript example")
+html(my_html)
 
