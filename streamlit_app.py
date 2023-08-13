@@ -28,7 +28,7 @@ st.set_page_config(
     page_title="Theia", page_icon="👀🧠", layout="wide", initial_sidebar_state="collapsed"
 )
 
-"# 🦜🔗 Theia: Connect your ideas"
+"# 👀🧠 Theia: Connect your ideas"
 openai_api_key = st.write(
     os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"],
 )
