@@ -58,19 +58,51 @@ with tabs[0]:
     # render_mermaid_with_images(graph_definition)
 
 with tabs[1]:
+    # my_html = """
+    # <!DOCTYPE html>
+    # <html lang="en">
+    # <body>
+
+
+
+    #     <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
+    #     <script type="text/javascript" src="https://github.com/Sivolc2/redpoint_hacks/blob/main/mermaid/mermaid_graph.js"></script>
+
+    # </body>
+    # </html>
+    # """
     my_html = """
     <!DOCTYPE html>
-    <html lang="en">
-    <body>
+        <html lang="en">
+        <head>
+            <!-- You might want to include meta and other tags here. -->
+        </head>
+        <body>
 
-
+        <div id="app"></div> <!-- This is where the Mermaid graph will render. -->
 
         <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
-        <script type="text/javascript" src="https://github.com/Sivolc2/redpoint_hacks/blob/main/mermaid/mermaid_graph.js"></script>
 
-    </body>
-    </html>
-    """
+        <!-- Inlined JavaScript from mermaid_graph.js -->
+        <script type="text/javascript">
+            var mermaidAPI = mermaid.mermaidAPI;
+
+            mermaidAPI.initialize({
+            startOnLoad: false
+            });
+
+            var element = document.getElementById("app");
+            var insertSvg = function(svgCode, bindFunctions) {
+            element.innerHTML = svgCode;
+            };
+            var graphDefinition = `graph LR; Nodetext-->SomeIcon(<img src='https://store.nytimes.com/cdn/shop/products/notebook-chambray_1024x1024.jpg?v=1571439076' width='40' height='40' />)`;
+            var graphDefinition2; // This variable is declared but not used in your provided script.
+            var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
+        </script>
+
+        </body>
+        </html>
+"""
     html(my_html)
 #     graph_definition = f"""graph LR; Systemstart-->SomeIcon(<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/test.png' width='50' height='50' />)"""
 #     render_mermaid_with_images(graph_definition)
