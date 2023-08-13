@@ -83,7 +83,6 @@ my_html = """
             </body>
             </html>
         """
-html(my_html, height=2000)
 
 # Existing imports and setup
 # tabs = st.tabs(["Input", "Visualization"])
@@ -91,6 +90,7 @@ html(my_html, height=2000)
 # with tabs[0]:
     # with st.form(key="form"):
 user_input = st.text_input("Add an item to your visualizer")
+html(my_html, height=2000)
 # submit_clicked = st.form_submit_button("Build visualization")
 if user_input:
     processed_prompt = build_prompt(user_input)
