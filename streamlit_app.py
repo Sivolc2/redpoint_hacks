@@ -57,7 +57,41 @@ with tabs[0]:
         # if not user_input:
         #     user_input = prefilled
         submit_clicked = st.form_submit_button("Build visualization")
+
+        my_html = """
+        <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <!-- You might want to include meta and other tags here. -->
+            </head>
+            <body>
+
+            <div id="app"></div> <!-- This is where the Mermaid graph will render. -->
+
+            <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
+
+            <!-- Inlined JavaScript from mermaid_graph.js -->
+            <script type="text/javascript">
+                var mermaidAPI = mermaid.mermaidAPI;
+
+                mermaidAPI.initialize({
+                startOnLoad: false
+                });
+
+                var element = document.getElementById("app");
+                var insertSvg = function(svgCode, bindFunctions) {
+                element.innerHTML = svgCode;
+                };
+        """ + f"""
     
+                var graphDefinition = `graph LR; Nodetext-->SomeIcon(<img src='{output_url}' width='100' height='100' />)`;
+                var graphDefinition2; // This variable is declared but not used in your provided script.
+                var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
+            </script>
+
+            </body>
+            </html>
+        """
     # graph_definition = f"""graph LR; Systemstart-->SomeIcon(<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/test.png?raw=true' width='50' height='50' />)"""
     # render_mermaid_with_images(graph_definition)
 
@@ -75,38 +109,7 @@ with tabs[1]:
     # </body>
     # </html>
     # """
-    my_html = """
-    <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <!-- You might want to include meta and other tags here. -->
-        </head>
-        <body>
 
-        <div id="app"></div> <!-- This is where the Mermaid graph will render. -->
-
-        <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
-
-        <!-- Inlined JavaScript from mermaid_graph.js -->
-        <script type="text/javascript">
-            var mermaidAPI = mermaid.mermaidAPI;
-
-            mermaidAPI.initialize({
-            startOnLoad: false
-            });
-
-            var element = document.getElementById("app");
-            var insertSvg = function(svgCode, bindFunctions) {
-            element.innerHTML = svgCode;
-            };
-            var graphDefinition = `graph LR; Nodetext-->SomeIcon(<img src='https://replicate.delivery/pbxt/Vtnuf8efETVX1pzCb4y1vRT7ogbIziEiViFRXMsD30tzg7yiA/out-0.png' width='40' height='40' />)`;
-            var graphDefinition2; // This variable is declared but not used in your provided script.
-            var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
-        </script>
-
-        </body>
-        </html>
-    """
     # <img src="" alt="0" style="width: 1038px;">
     html(my_html)
 #     graph_definition = f"""graph LR; Systemstart-->SomeIcon(<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/test.png' width='50' height='50' />)"""
