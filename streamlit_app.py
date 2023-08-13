@@ -1,7 +1,7 @@
 from pathlib import Path
 import os
 import replicate
-import webbrowser
+# import webbrowser
 
 import streamlit as st
 from streamlit.components.v1 import html
@@ -51,7 +51,7 @@ with tabs[0]:
         output_url = version.predict(
             prompt = user_input)[0]
         # yourfunction(user_input)
-        webbrowser.open(output_url)
+        # webbrowser.open(output_url)
         # if not user_input:
         #     user_input = prefilled
         submit_clicked = st.form_submit_button("Build visualization")
