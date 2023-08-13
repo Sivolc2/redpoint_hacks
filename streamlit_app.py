@@ -152,6 +152,7 @@ with tabs[0]:
                     </body>
                     </html>
                 """
-        html(my_html)
+        st.markdown(my_html, unsafe_allow_html=True)
+        # html(my_html)
 
 # with tabs[1]:
