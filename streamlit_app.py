@@ -140,11 +140,11 @@ if user_input:
                     };
             """ + f"""
                     var graphDefinition = `graph LR; 
-                            B[<img src='https://imgur.com/n5w3eNs' width='250' height='250'>]
-                            A[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o1.png' width='250' height='250'>]
-                            C[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o2.png' width='250' height='250'>]
-                            D[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o3.png' width='250' height='250'>]
-                            E[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o4.png' width='250' height='250'>]
+                            B[<img src='https://i.imgur.com/n5w3eNs.png' width='250' height='250'>]
+                            A[<img src='https://i.imgur.com/38U9Iag.png' width='250' height='250'>]
+                            C[<img src='https://i.imgur.com/QEg6015.png' width='250' height='250'>]
+                            D[<img src='https://i.imgur.com/NvhoSK6.png' width='250' height='250'>]
+                            E[<img src='https://i.imgur.com/Vcfw3Dy.png' width='250' height='250'>]
                             F[<img src='{output_url}' width='250' height='250'>]
                             A-->B
                             B-->C
