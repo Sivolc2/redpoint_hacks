@@ -20,10 +20,6 @@ def build_prompt(user_input):
     text = f'I need a single stable diffusion prompt to generate a imagery representing the following note:\n {user_input}. The style should be memorable, simple design and high contrast/logo colors.'
     return llm(text)
 
-# def export_prompt(processed_prompt):
-#     with open('./data/output_prompt.txt', 'a') as file:
-#         file.write(processed_prompt + '\n')
-
 # st.title("🦜 LangChain: Chat with search")
 st.set_page_config(
     page_title="Theia", page_icon="*", layout="wide", initial_sidebar_state="collapsed"
