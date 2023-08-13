@@ -31,6 +31,7 @@ with tabs[0]:
         user_input = st.text_input("Add an item to your visualizer")
         output_url = version.predict(
             prompt = user_input)[0]
+        # yourfunction(user_input)
         # if not user_input:
         #     user_input = prefilled
         submit_clicked = st.form_submit_button("Build visualization")
