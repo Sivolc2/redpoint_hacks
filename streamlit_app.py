@@ -113,7 +113,8 @@ with tabs[0]:
                 };
         """ + f"""
     
-                var graphDefinition = `graph LR; YourNewNote-->SomeIcon(<img src='{output_url}' width='250' height='250') -->YourNewNote-->SomeIcon(<img src='{output_url}' width='250' height='250' />)`;
+                var graphDefinition = `graph LR; YourNewNote-->SomeIcon(<img src='{output_url}' width='250' height='250')`;
+                var graphDefinition2 = `graph LR; YourNewNote-->SomeIcon(<img src='{output_url}' width='250' height='250')`;
                 var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
             </script>
 
