@@ -4,6 +4,8 @@ import replicate
 # from langchain.llms import OpenAI
 import streamlit as st
 from streamlit.components.v1 import html
+from PIL import Image
+import requests
 
 DB_PATH = (Path(__file__).parent / "Chinook.db").absolute()
 
@@ -38,40 +40,44 @@ version = model.versions.get(VERSION)
 output_url = ''
 
 ## Base HTML will be initial pre-build nodes from Obsidian
-# my_html = """
-#         <!DOCTYPE html>
-#             <html lang="en">
-#             <head>
-#                 <!-- You might want to include meta and other tags here. -->
-#             </head>
-#             <body>
+my_html = """
+        <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <!-- You might want to include meta and other tags here. -->
+            </head>
+            <body>
 
-#             <div id="app"></div> <!-- This is where the Mermaid graph will render. -->
+            <div id="app"></div> <!-- This is where the Mermaid graph will render. -->
 
-#             <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
+            <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
 
-#             <!-- Inlined JavaScript from mermaid_graph.js -->
-#             <script type="text/javascript">
-#                 var mermaidAPI = mermaid.mermaidAPI;
+            <!-- Inlined JavaScript from mermaid_graph.js -->
+            <script type="text/javascript">
+                var mermaidAPI = mermaid.mermaidAPI;
 
-#                 mermaidAPI.initialize({
-#                 startOnLoad: false
-#                 });
+                mermaidAPI.initialize({
+                startOnLoad: false
+                });
 
-#                 var element = document.getElementById("app");
-#                 var insertSvg = function(svgCode, bindFunctions) {
-#                 element.innerHTML = svgCode;
-#                 };
-#         """ + f"""
-    
-#                 var graphDefinition = `graph LR; YourNewNote-->SomeIcon(<img src='{output_url}' width='100' height='100' />)-->YourNewNote-->SomeIcon(<img src='{output_url}' width='100' height='100' />);`;
-#                 var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
-#             </script>
+                var element = document.getElementById("app");
+                var insertSvg = function(svgCode, bindFunctions) {
+                element.innerHTML = svgCode;
+                };
+        """ + f"""
+                var graphDefinition = `graph LR; 
+                        A[<img src='{output_url}' width='250' height='250'>]
+                        B[<img src='{output_url}' width='250' height='250'>]
+                        C[<img src='{output_url}' width='250' height='250'>]
+                        A-->B
+                        B-->C
+                `
+                var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
+            </script>
 
-#             </body>
-#             </html>
-#         """
-
+            </body>
+            </html>
+        """
 # Existing imports and setup
 tabs = st.tabs(["Input", "Visualization"])
 
@@ -82,7 +88,17 @@ with tabs[0]:
         processed_prompt = build_prompt(user_input)
         output_url = version.predict(
             prompt = processed_prompt)[0]
-        
+
+        # Fetch the image from the URL
+        response = requests.get(output_url, stream=True)
+        img = Image.open(response.raw)
+
+        # Cap the image's resolution to (width, height)
+        max_width = 300
+        max_height = 300
+
+        # Resize the image maintaining the aspect ratio
+        img.thumbnail((max_width, max_height))
         # Display the image in the Streamlit app
         st.image(output_url, caption='Your Generated Image', use_column_width=False)
 
@@ -116,12 +132,10 @@ with tabs[0]:
                         A[<img src='{output_url}' width='250' height='250'>]
                         B[<img src='{output_url}' width='250' height='250'>]
                         C[<img src='{output_url}' width='250' height='250'>]
+                        D[<img src='{output_url}' width='250' height='250'>]
                         A-->B
-                        A-->C
                         B-->C
-                        B-->A
-                        C-->A
-                        C--B
+                        C-->D
                 `
                 var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
             </script>
