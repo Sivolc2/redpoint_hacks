@@ -112,12 +112,8 @@ with tabs[0]:
                 element.innerHTML = svgCode;
                 };
         """ + f"""
-                var graphDefinition = `graph LR; 
-                        A[<img src='{output_url}' width='250' height='250'>]
-                        B[<img src='{output_url}' width='250' height='250'>]
-                        C[<img src='{output_url}' width='250' height='250'>]
-                        A-->B
-                        B-->C`
+    
+                var graphDefinition = `graph LR; YourNewNote-->SomeIcon(<img src='{output_url}' width='250' height='250')`;
                 var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
             </script>
 
