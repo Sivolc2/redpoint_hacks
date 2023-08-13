@@ -42,7 +42,7 @@ with tabs[0]:
         submit_clicked = st.form_submit_button("Build visualization")
 
 with tabs[1]:
-    graph_definition = f"""graph LR; Systemstart-->SomeIcon(<img src='{user_input}' width='50' height='50' />)"""
+    graph_definition = f"""graph LR; Systemstart-->SomeIcon(<img src='./img/test.png' width='50' height='50' />)"""
     render_mermaid_with_images(graph_definition)
 
 
