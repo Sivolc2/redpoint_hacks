@@ -24,14 +24,6 @@ def render_mermaid_with_images(graph_definition):
     # )
     html(my_html)
     # st.markdown(my_html, unsafe_allow_html=True)
-# Replicate Variables
-replicate_api_key = st.write(
-    os.environ["REPLICATE_API_KEY"] == st.secrets["REPLICATE_API_KEY"],
-)
-model = replicate.models.get("stability-ai/stable-diffusion")
-version = model.versions.get(
-    "db21e45d3f7023abc2a46ee38a23973f6dce16bb082a930b0c49861f96d1e5bf")
-
 
 # st.title("🦜 LangChain: Chat with search")
 st.set_page_config(
@@ -42,6 +34,13 @@ st.set_page_config(
 openai_api_key = st.write(
     os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"],
 )
+# Replicate Variables
+replicate_api_key = st.write(
+    os.environ["REPLICATE_API_KEY"] == st.secrets["REPLICATE_API_KEY"],
+)
+model = replicate.models.get("stability-ai/stable-diffusion")
+version = model.versions.get(
+    "db21e45d3f7023abc2a46ee38a23973f6dce16bb082a930b0c49861f96d1e5bf")
 
 # Existing imports and setup
 tabs = st.tabs(["Input", "Visualization"])
@@ -56,6 +55,7 @@ with tabs[0]:
         # if not user_input:
         #     user_input = prefilled
         submit_clicked = st.form_submit_button("Build visualization")
+    
     graph_definition = f"""graph LR; Systemstart-->SomeIcon(<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/test.png?raw=true' width='50' height='50' />)"""
     render_mermaid_with_images(graph_definition)
 
