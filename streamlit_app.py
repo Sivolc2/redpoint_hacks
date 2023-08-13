@@ -35,6 +35,7 @@ replicate_api_key = st.write(
 model = replicate.models.get(MODEL)
 version = model.versions.get(VERSION)
 output_url = ''
+my_html = ''
 
 # Existing imports and setup
 tabs = st.tabs(["Input", "Visualization"])
@@ -85,6 +86,6 @@ with tabs[0]:
             </body>
             </html>
         """
+        html(my_html)
 
-with tabs[1]:
-    html(my_html)
+# with tabs[1]:
