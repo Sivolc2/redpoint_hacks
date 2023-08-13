@@ -8,6 +8,9 @@ import streamlit as st
 DB_PATH = (Path(__file__).parent / "Chinook.db").absolute()
 
 # Replicate Variables
+replicate_api_key = st.write(
+    os.environ["REPLICATE_API_KEY"] == st.secrets["REPLICATE_API_KEY"],
+)
 model = replicate.models.get("stability-ai/stable-diffusion")
 version = model.versions.get(
     "db21e45d3f7023abc2a46ee38a23973f6dce16bb082a930b0c49861f96d1e5bf")
