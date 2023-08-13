@@ -25,7 +25,7 @@ def build_prompt(user_input):
 
 # st.title("🦜 LangChain: Chat with search")
 st.set_page_config(
-    page_title="Theia", page_icon="👀🧠", layout="wide", initial_sidebar_state="collapsed"
+    page_title="Theia", page_icon="👀🧠", layout="wide", initial_sidebar_state="collapsed", primary_color="#4a90e2" 
 )
 
 "# 🦜🔗 Theia: Connect your ideas"
