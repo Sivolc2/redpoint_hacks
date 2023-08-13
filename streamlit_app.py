@@ -142,9 +142,9 @@ with tabs[0]:
                                 F[<img src='{output_url}' width='250' height='250'>]
                                 A-->B
                                 B-->C
-                                C-->D
-                                D-->E
-                                E-->F
+                                B-->D
+                                B-->E
+                                B-->F
                         `
                         var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
                     </script>
