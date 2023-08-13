@@ -18,18 +18,6 @@ def export_prompt(processed_prompt):
     with open('./data/output_prompt.txt', 'a') as file:
         file.write(processed_prompt + '\n')
 
-def render_mermaid_with_images(graph_definition):
-    my_html = f"""
-        <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
-        <script src="https://raw.githubusercontent.com/Sivolc2/redpoint_hacks/main/mermaid_with_images.js"></script>
-        <div id="mermaid-chart"></div>
-        <script>
-            var graphDefinition = `{graph_definition}`;
-            renderMermaid("mermaid-chart", graphDefinition);
-        </script>
-        """
-    html(my_html)
-
 st.set_page_config(
     page_title="Theia", page_icon="*", layout="wide", initial_sidebar_state="collapsed"
 )
@@ -66,8 +54,32 @@ with tabs[0]:
                 if idx > 0:
                     graph_relations.append(f"A{idx-1}-->A{idx}")
             
-            graph_definition = "graph LR;\n" + ";\n".join(graph_nodes + graph_relations) + ";"
-            render_mermaid_with_images(graph_definition)
+            graph_definition = ";\n".join(graph_nodes + graph_relations)
+            # Construct the graph in HTML
+            graph_def_script = f"""var graphDefinition = `{graph_definition}`;var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
+                </script>
+                </body>
+                </html>"""
+            
+            my_html = f"""
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <!-- You might want to include meta and other tags here. -->
+                </head>
+                <body>
 
-# with tabs[1]:
-#     render_mermaid_with_images(graph_definition)
+                <div id="app"></div> <!-- This is where the Mermaid graph will render. -->
+
+                <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
+                <script type="text/javascript">
+                    var mermaidAPI = mermaid.mermaidAPI;
+                    mermaidAPI.initialize({{ startOnLoad: false }});
+                    var element = document.getElementById("app");
+                    var insertSvg = function(svgCode, bindFunctions) {{
+                        element.innerHTML = svgCode;
+                    }};                    
+            """ + graph_def_script
+
+            print('Running', my_html)
+            html(my_html)
