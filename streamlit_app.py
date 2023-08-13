@@ -67,11 +67,11 @@ my_html = """
                 };
         """ + f"""
                 var graphDefinition = `graph LR; 
-                        B[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/out-0.png' width='250' height='250'>]
-                        A[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/out-0%20(1).png' width='250' height='250'>]
-                        C[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/out-0%20(2).png' width='250' height='250'>]
-                        D[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/out-0%20(3).png' width='250' height='250'>]
-                        E[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/out-0%20(4).png' width='250' height='250'>]
+                            B[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o0.png' width='250' height='250'>]
+                            A[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o1.png' width='250' height='250'>]
+                            C[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o2.png' width='250' height='250'>]
+                            D[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o3.png' width='250' height='250'>]
+                            E[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o4.png' width='250' height='250'>]
                         A-->B
                         B-->C
                         B-->D
@@ -140,11 +140,11 @@ if user_input:
                     };
             """ + f"""
                     var graphDefinition = `graph LR; 
-                            B[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/out-0.png' width='250' height='250'>]
-                            A[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/out-0%20(1).png' width='250' height='250'>]
-                            C[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/out-0%20(2).png' width='250' height='250'>]
-                            D[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/out-0%20(3).png' width='250' height='250'>]
-                            E[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/out-0%20(4).png' width='250' height='250'>]
+                            B[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o0.png' width='250' height='250'>]
+                            A[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o1.png' width='250' height='250'>]
+                            C[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o2.png' width='250' height='250'>]
+                            D[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o3.png' width='250' height='250'>]
+                            E[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o4.png' width='250' height='250'>]
                             F[<img src='{output_url}' width='250' height='250'>]
                             A-->B
                             B-->C
