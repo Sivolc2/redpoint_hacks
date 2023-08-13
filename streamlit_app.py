@@ -78,6 +78,7 @@ tabs = st.tabs(["Input", "Visualization"])
 with tabs[0]:
     with st.form(key="form"):
         user_input = st.text_input("Add an item to your visualizer")
+        submit_clicked = st.form_submit_button("Build visualization")
         processed_prompt = build_prompt(user_input)
         output_url = version.predict(
             prompt = processed_prompt)[0]
@@ -85,7 +86,6 @@ with tabs[0]:
         # Display the image in the Streamlit app
         st.image(output_url, caption='Your Generated Image', use_column_width=False)
 
-        submit_clicked = st.form_submit_button("Build visualization")
 
         my_html = """
         <!DOCTYPE html>
@@ -113,7 +113,8 @@ with tabs[0]:
                 };
         """ + f"""
     
-                var graphDefinition = `graph LR; YourNewNote-->SomeIcon(<img src='{output_url}' width='250' height='250' />)-->YourNewNote-->SomeIcon(<img src='{output_url}' width='250' height='250' />);`;
+                var graphDefinition = `graph LR; YourNewNote-->SomeIcon(<img src='{output_url}' width='250' height='250' />
+                                                 YourNewNote-->SomeIcon(<img src='{output_url}' width='250' height='250' />)`;
                 var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
             </script>
 
