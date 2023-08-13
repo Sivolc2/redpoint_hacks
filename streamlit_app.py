@@ -83,10 +83,6 @@ my_html = """
             </html>
         """
 
-
-
-
-
 # Existing imports and setup
 tabs = st.tabs(["Input", "Visualization"])
 
@@ -113,45 +109,49 @@ with tabs[0]:
 
 
         my_html = """
-        <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <!-- You might want to include meta and other tags here. -->
-            </head>
-            <body>
+                <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <!-- You might want to include meta and other tags here. -->
+                    </head>
+                    <body>
 
-            <div id="app"></div> <!-- This is where the Mermaid graph will render. -->
+                    <div id="app"></div> <!-- This is where the Mermaid graph will render. -->
 
-            <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
+                    <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
 
-            <!-- Inlined JavaScript from mermaid_graph.js -->
-            <script type="text/javascript">
-                var mermaidAPI = mermaid.mermaidAPI;
+                    <!-- Inlined JavaScript from mermaid_graph.js -->
+                    <script type="text/javascript">
+                        var mermaidAPI = mermaid.mermaidAPI;
 
-                mermaidAPI.initialize({
-                startOnLoad: false
-                });
+                        mermaidAPI.initialize({
+                        startOnLoad: false
+                        });
 
-                var element = document.getElementById("app");
-                var insertSvg = function(svgCode, bindFunctions) {
-                element.innerHTML = svgCode;
-                };
-        """ + f"""
-                var graphDefinition = `graph LR; 
-                        A[<img src='{output_url}' width='250' height='250'>]
-                        B[<img src='{output_url}' width='250' height='250'>]
-                        C[<img src='{output_url}' width='250' height='250'>]
-                        D[<img src='{output_url}' width='250' height='250'>]
-                        A-->B
-                        B-->C
-                        C-->D
-                `
-                var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
-            </script>
+                        var element = document.getElementById("app");
+                        var insertSvg = function(svgCode, bindFunctions) {
+                        element.innerHTML = svgCode;
+                        };
+                """ + f"""
+                        var graphDefinition = `graph LR; 
+                                A[<img src='https://replicate.delivery/pbxt/ncdFnNBHt9ZmFBxJCwHE9umHT0eW9h7UyqKwp1gKUO7eFfyiA/out-0.png' width='250' height='250'>]
+                                B[<img src='https://replicate.delivery/pbxt/9nztfyP23SQZAi99TTaH2aeRmrj7cX6mdSDqmQ2FL7yDHfyiA/out-0.png' width='250' height='250'>]
+                                C[<img src='https://replicate.delivery/pbxt/C4lFzYnkcj68IFm9aqPd7G0XyCukmKsBgy15HfN7Zef5SelFB/out-0.png' width='250' height='250'>]
+                                D[<img src='https://replicate.delivery/pbxt/fKZ6nSHDcr0GTCAeQXQ0qaFDCGCIO1G3qbkJzSprQORdKfyiA/out-0.png' width='250' height='250'>]
+                                E[<img src='https://replicate.delivery/pbxt/ER8RVkL3a6qdGhZPDqkzlEEKsgi14SG8lV9PE9YfGCkllvsIA/out-0.png' width='250' height='250'>]
+                                F[<img src='{output_url}' width='250' height='250'>]
+                                A-->B
+                                B-->C
+                                C-->D
+                                D-->E
+                                E-->F
+                        `
+                        var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
+                    </script>
 
-            </body>
-            </html>
-        """
+                    </body>
+                    </html>
+                """
         html(my_html)
 
 # with tabs[1]:
