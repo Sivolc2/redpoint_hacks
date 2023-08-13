@@ -106,7 +106,7 @@ with tabs[1]:
 
         </body>
         </html>
-"""
+    """
     html(my_html)
 #     graph_definition = f"""graph LR; Systemstart-->SomeIcon(<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/test.png' width='50' height='50' />)"""
 #     render_mermaid_with_images(graph_definition)
