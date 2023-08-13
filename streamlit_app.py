@@ -115,16 +115,3 @@ with tabs[1]:
 #     graph_definition = f"""graph LR; Systemstart-->SomeIcon(<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/test.png' width='50' height='50' />)"""
 #     render_mermaid_with_images(graph_definition)
 
-
-# Define your javascript
-my_js = """
-alert("Hola mundo");
-"""
-
-# Wrapt the javascript as html code
-my_html = f"<script>{my_js}</script>"
-
-# Execute your app
-st.title("Javascript example")
-html(my_html)
-
