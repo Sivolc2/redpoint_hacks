@@ -67,7 +67,7 @@ my_html = """
                 };
         """ + f"""
                 var graphDefinition = `graph LR; 
-                            B[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o0.png' width='250' height='250'>]
+                            B[<img src='https://imgur.com/n5w3eNs' width='250' height='250'>]
                             A[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o1.png' width='250' height='250'>]
                             C[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o2.png' width='250' height='250'>]
                             D[<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/o3.png' width='250' height='250'>]
