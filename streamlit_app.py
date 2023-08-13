@@ -159,6 +159,6 @@ if user_input:
                 </html>
             """
     # st.markdown(my_html, unsafe_allow_html=True)
-    html(my_html, height=2000)
+    html(my_html, height=2200)
 
 # with tabs[1]:
