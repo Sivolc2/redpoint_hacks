@@ -66,7 +66,7 @@ with tabs[1]:
 
 
         <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
-        <script type="text/javascript" src="https://raw.githubusercontent.com/Sivolc2/redpoint_hacks/main/mermaid/mermaid_graph.js"></script>
+        <script type="text/javascript" src="https://github.com/Sivolc2/redpoint_hacks/blob/main/mermaid/mermaid_graph.js"></script>
 
     </body>
     </html>
