@@ -36,7 +36,7 @@ openai_api_key = st.write(
 )
 # Replicate Variables
 replicate_api_key = st.write(
-    os.environ["REPLICATE_API_KEY"] == st.secrets["REPLICATE_API_KEY"],
+    os.environ["REPLICATE_API_TOKEN"] == st.secrets["REPLICATE_API_KEY"],
 )
 model = replicate.models.get("stability-ai/stable-diffusion")
 version = model.versions.get(
