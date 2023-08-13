@@ -88,72 +88,73 @@ my_html = """
 tabs = st.tabs(["Input", "Visualization"])
 
 with tabs[0]:
-    with st.form(key="form"):
+    # with st.form(key="form"):
         user_input = st.text_input("Add an item to your visualizer")
-        submit_clicked = st.form_submit_button("Build visualization")
-        processed_prompt = build_prompt(user_input)
-        output_url = version.predict(
-            prompt = processed_prompt)[0]
+        # submit_clicked = st.form_submit_button("Build visualization")
+        if user_input:
+            processed_prompt = build_prompt(user_input)
+            output_url = version.predict(
+                prompt = processed_prompt)[0]
 
-        # Fetch the image from the URL
-        response = requests.get(output_url, stream=True)
-        img = Image.open(response.raw)
+            # Fetch the image from the URL
+            response = requests.get(output_url, stream=True)
+            img = Image.open(response.raw)
 
-        # Cap the image's resolution to (width, height)
-        max_width = 300
-        max_height = 300
+            # Cap the image's resolution to (width, height)
+            max_width = 300
+            max_height = 300
 
-        # Resize the image maintaining the aspect ratio
-        img.thumbnail((max_width, max_height))
-        # Display the image in the Streamlit app
-        # st.image(img, caption='Your Generated Image', use_column_width=False)
+            # Resize the image maintaining the aspect ratio
+            img.thumbnail((max_width, max_height))
+            # Display the image in the Streamlit app
+            # st.image(img, caption='Your Generated Image', use_column_width=False)
 
 
-        my_html = """
-                <!DOCTYPE html>
-                    <html lang="en">
-                    <head>
-                        <!-- You might want to include meta and other tags here. -->
-                    </head>
-                    <body>
+            my_html = """
+                    <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <!-- You might want to include meta and other tags here. -->
+                        </head>
+                        <body>
 
-                    <div id="app"></div> <!-- This is where the Mermaid graph will render. -->
+                        <div id="app"></div> <!-- This is where the Mermaid graph will render. -->
 
-                    <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
+                        <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
 
-                    <!-- Inlined JavaScript from mermaid_graph.js -->
-                    <script type="text/javascript">
-                        var mermaidAPI = mermaid.mermaidAPI;
+                        <!-- Inlined JavaScript from mermaid_graph.js -->
+                        <script type="text/javascript">
+                            var mermaidAPI = mermaid.mermaidAPI;
 
-                        mermaidAPI.initialize({
-                        startOnLoad: false
-                        });
+                            mermaidAPI.initialize({
+                            startOnLoad: false
+                            });
 
-                        var element = document.getElementById("app");
-                        var insertSvg = function(svgCode, bindFunctions) {
-                        element.innerHTML = svgCode;
-                        };
-                """ + f"""
-                        var graphDefinition = `graph LR; 
-                                A[<img src='https://replicate.delivery/pbxt/ncdFnNBHt9ZmFBxJCwHE9umHT0eW9h7UyqKwp1gKUO7eFfyiA/out-0.png' width='250' height='250'>]
-                                B[<img src='https://replicate.delivery/pbxt/9nztfyP23SQZAi99TTaH2aeRmrj7cX6mdSDqmQ2FL7yDHfyiA/out-0.png' width='250' height='250'>]
-                                C[<img src='https://replicate.delivery/pbxt/C4lFzYnkcj68IFm9aqPd7G0XyCukmKsBgy15HfN7Zef5SelFB/out-0.png' width='250' height='250'>]
-                                D[<img src='https://replicate.delivery/pbxt/fKZ6nSHDcr0GTCAeQXQ0qaFDCGCIO1G3qbkJzSprQORdKfyiA/out-0.png' width='250' height='250'>]
-                                E[<img src='https://replicate.delivery/pbxt/ER8RVkL3a6qdGhZPDqkzlEEKsgi14SG8lV9PE9YfGCkllvsIA/out-0.png' width='250' height='250'>]
-                                F[<img src='{output_url}' width='250' height='250'>]
-                                A-->B
-                                B-->C
-                                B-->D
-                                B-->E
-                                B-->F
-                        `
-                        var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
-                    </script>
+                            var element = document.getElementById("app");
+                            var insertSvg = function(svgCode, bindFunctions) {
+                            element.innerHTML = svgCode;
+                            };
+                    """ + f"""
+                            var graphDefinition = `graph LR; 
+                                    A[<img src='https://replicate.delivery/pbxt/ncdFnNBHt9ZmFBxJCwHE9umHT0eW9h7UyqKwp1gKUO7eFfyiA/out-0.png' width='250' height='250'>]
+                                    B[<img src='https://replicate.delivery/pbxt/9nztfyP23SQZAi99TTaH2aeRmrj7cX6mdSDqmQ2FL7yDHfyiA/out-0.png' width='250' height='250'>]
+                                    C[<img src='https://replicate.delivery/pbxt/C4lFzYnkcj68IFm9aqPd7G0XyCukmKsBgy15HfN7Zef5SelFB/out-0.png' width='250' height='250'>]
+                                    D[<img src='https://replicate.delivery/pbxt/fKZ6nSHDcr0GTCAeQXQ0qaFDCGCIO1G3qbkJzSprQORdKfyiA/out-0.png' width='250' height='250'>]
+                                    E[<img src='https://replicate.delivery/pbxt/ER8RVkL3a6qdGhZPDqkzlEEKsgi14SG8lV9PE9YfGCkllvsIA/out-0.png' width='250' height='250'>]
+                                    F[<img src='{output_url}' width='250' height='250'>]
+                                    A-->B
+                                    B-->C
+                                    B-->D
+                                    B-->E
+                                    B-->F
+                            `
+                            var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
+                        </script>
 
-                    </body>
-                    </html>
-                """
-        # st.markdown(my_html, unsafe_allow_html=True)
-        html(my_html)
+                        </body>
+                        </html>
+                    """
+            # st.markdown(my_html, unsafe_allow_html=True)
+            html(my_html)
 
 # with tabs[1]:
