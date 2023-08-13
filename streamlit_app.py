@@ -1,10 +1,14 @@
 from pathlib import Path
+from dotenv import load_dotenv
 import os
 import replicate
+from langchain.llms import OpenAI
 import streamlit as st
 from streamlit.components.v1 import html
 
 DB_PATH = (Path(__file__).parent / "Chinook.db").absolute()
+load_dotenv()
+openai_key = os.getenv("OPENAI_API_KEY")
 
 # Replicate CONSTANTS
 MODEL = "stability-ai/sdxl"
@@ -12,7 +16,9 @@ VERSION = "a00d0b7dcbb9c3fbb34ba87d2d5b46c56969c84a628bf778a7fdaec30b1b99c5"
 
 def build_prompt(user_input):
     # Placeholder. Modify as required.
-    return user_input
+    llm = OpenAI(openai_api_key=openai_key)
+    text = f'I need a single stable diffusion prompt to generate a imagery representing the following note:\n {doc}. The style should be memorable, simple design and high contrast/logo colors.'
+    return llm(text)
 
 def export_prompt(processed_prompt):
     with open('./data/output_prompt.txt', 'a') as file:
