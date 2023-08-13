@@ -20,8 +20,8 @@ def render_mermaid_with_images(graph_definition):
     #     s,
     #     unsafe_allow_html=True,
     # )
-    # html(my_html)
-    st.markdown(my_html, unsafe_allow_html=True)
+    html(my_html)
+    # st.markdown(my_html, unsafe_allow_html=True)
 
 
 # st.title("🦜 LangChain: Chat with search")
