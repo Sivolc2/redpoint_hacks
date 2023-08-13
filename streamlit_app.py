@@ -1,7 +1,6 @@
 from pathlib import Path
 import os
 import replicate
-# import webbrowser
 
 import streamlit as st
 from streamlit.components.v1 import html
@@ -51,15 +50,28 @@ with tabs[0]:
         output_url = version.predict(
             prompt = user_input)[0]
         # yourfunction(user_input)
-        # webbrowser.open(output_url)
         # if not user_input:
         #     user_input = prefilled
         submit_clicked = st.form_submit_button("Build visualization")
     
-    graph_definition = f"""graph LR; Systemstart-->SomeIcon(<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/test.png?raw=true' width='50' height='50' />)"""
-    render_mermaid_with_images(graph_definition)
+    # graph_definition = f"""graph LR; Systemstart-->SomeIcon(<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/test.png?raw=true' width='50' height='50' />)"""
+    # render_mermaid_with_images(graph_definition)
 
-# with tabs[1]:
+with tabs[1]:
+    my_html = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <body>
+
+
+
+        <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
+        <script type="text/javascript" src="mermaid/mermaid_graph.js"></script>
+
+    </body>
+    </html>
+    """
+    html(my_html)
 #     graph_definition = f"""graph LR; Systemstart-->SomeIcon(<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/test.png' width='50' height='50' />)"""
 #     render_mermaid_with_images(graph_definition)
 
