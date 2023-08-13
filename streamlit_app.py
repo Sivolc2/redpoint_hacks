@@ -56,9 +56,6 @@ with tabs[0]:
         # Display the image in the Streamlit app
         st.image(output_url, caption='Generated Image', use_column_width=True)
 
-        # yourfunction(user_input)
-        # if not user_input:
-        #     user_input = prefilled
         submit_clicked = st.form_submit_button("Build visualization")
 
         my_html = """
@@ -95,26 +92,6 @@ with tabs[0]:
             </body>
             </html>
         """
-    # graph_definition = f"""graph LR; Systemstart-->SomeIcon(<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/test.png?raw=true' width='50' height='50' />)"""
-    # render_mermaid_with_images(graph_definition)
 
 with tabs[1]:
-    # my_html = """
-    # <!DOCTYPE html>
-    # <html lang="en">
-    # <body>
-
-
-
-    #     <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
-    #     <script type="text/javascript" src="https://github.com/Sivolc2/redpoint_hacks/blob/main/mermaid/mermaid_graph.js"></script>
-
-    # </body>
-    # </html>
-    # """
-
-    # <img src="" alt="0" style="width: 1038px;">
     html(my_html)
-#     graph_definition = f"""graph LR; Systemstart-->SomeIcon(<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/test.png' width='50' height='50' />)"""
-#     render_mermaid_with_images(graph_definition)
-
