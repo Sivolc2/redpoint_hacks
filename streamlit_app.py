@@ -41,7 +41,7 @@ openai_api_key = st.write(
 replicate_api_key = st.write(
     os.environ["REPLICATE_API_TOKEN"] == st.secrets["REPLICATE_API_TOKEN"],
 )
-model = replicate.models.get()
+model = replicate.models.get(MODEL)
 version = model.versions.get(VERSION)
 
 # Existing imports and setup
