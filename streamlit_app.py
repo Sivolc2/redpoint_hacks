@@ -34,6 +34,7 @@ replicate_api_key = st.write(
 )
 model = replicate.models.get(MODEL)
 version = model.versions.get(VERSION)
+output_url = ''
 
 # Existing imports and setup
 tabs = st.tabs(["Input", "Visualization"])
@@ -46,7 +47,7 @@ with tabs[0]:
             prompt = processed_prompt)[0]
         
         # Display the image in the Streamlit app
-        st.image(output_url, caption='Generated Image', use_column_width=True)
+        st.image(output_url, caption='Your Generated Image', use_column_width=True)
 
         submit_clicked = st.form_submit_button("Build visualization")
 
