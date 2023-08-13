@@ -105,7 +105,7 @@ with tabs[0]:
         # Resize the image maintaining the aspect ratio
         img.thumbnail((max_width, max_height))
         # Display the image in the Streamlit app
-        st.image(output_url, caption='Your Generated Image', use_column_width=False)
+        st.image(img, caption='Your Generated Image', use_column_width=False)
 
 
         my_html = """
