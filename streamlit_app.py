@@ -35,13 +35,15 @@ with tabs[0]:
         user_input = st.text_input("Add an item to your visualizer")
         output_url = version.predict(
             prompt = user_input)[0]
+<<<<<<< HEAD
         # yourfunction(user_input)
+=======
+        webbrowser.open(output_url)
+>>>>>>> cb22540 (open output in new tab)
         # if not user_input:
         #     user_input = prefilled
         submit_clicked = st.form_submit_button("Build visualization")
 
-
-# import streamlit as st
 
 # Define your javascript
 my_js = """
