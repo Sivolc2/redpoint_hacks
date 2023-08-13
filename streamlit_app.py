@@ -90,7 +90,7 @@ my_html = """
 # with tabs[0]:
     # with st.form(key="form"):
 user_input = st.text_input("Add an item to your visualizer")
-html(my_html, height=1000)
+html(my_html, height=1200)
 # submit_clicked = st.form_submit_button("Build visualization")
 if user_input:
     st.write("Visualize my life 🧠...")
@@ -140,12 +140,12 @@ if user_input:
                     };
             """ + f"""
                     var graphDefinition = `graph LR; 
-                            B[<img src='https://i.imgur.com/n5w3eNs.png' width='250' height='250'>]
-                            A[<img src='https://i.imgur.com/38U9Iag.png' width='250' height='250'>]
-                            C[<img src='https://i.imgur.com/QEg6015.png' width='250' height='250'>]
-                            D[<img src='https://i.imgur.com/NvhoSK6.png' width='250' height='250'>]
-                            E[<img src='https://i.imgur.com/Vcfw3Dy.png' width='250' height='250'>]
-                            F[<img src='{output_url}' width='250' height='250'>]
+                                B[<img src='https://i.imgur.com/n5w3eNs.png' width='250' height='250'>]
+                                A[<img src='https://i.imgur.com/38U9Iag.png' width='250' height='250'>]
+                                C[<img src='https://i.imgur.com/QEg6015.png' width='250' height='250'>]
+                                D[<img src='https://i.imgur.com/NvhoSK6.png' width='250' height='250'>]
+                                E[<img src='https://i.imgur.com/Vcfw3Dy.png' width='250' height='250'>]
+                                F[<img src='{output_url}' width='250' height='250'>]
                             A-->B
                             B-->C
                             B-->D
