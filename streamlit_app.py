@@ -42,10 +42,12 @@ with tabs[0]:
         # if not user_input:
         #     user_input = prefilled
         submit_clicked = st.form_submit_button("Build visualization")
-
-with tabs[1]:
     graph_definition = f"""graph LR; Systemstart-->SomeIcon(<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/test.png' width='50' height='50' />)"""
     render_mermaid_with_images(graph_definition)
+
+# with tabs[1]:
+#     graph_definition = f"""graph LR; Systemstart-->SomeIcon(<img src='https://github.com/Sivolc2/redpoint_hacks/blob/main/img/test.png' width='50' height='50' />)"""
+#     render_mermaid_with_images(graph_definition)
 
 
 # # Define your javascript
