@@ -93,6 +93,7 @@ user_input = st.text_input("Add an item to your visualizer")
 html(my_html, height=1000)
 # submit_clicked = st.form_submit_button("Build visualization")
 if user_input:
+    st.write("Visualize my life 🧠...")
     st.write('Converting into a Stable Diffusion prompt...')
     processed_prompt = build_prompt(user_input)
     st.write('Sending prompt to Stable Diffusion...')
