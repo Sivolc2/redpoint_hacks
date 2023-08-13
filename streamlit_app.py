@@ -8,8 +8,8 @@ from streamlit.components.v1 import html
 DB_PATH = (Path(__file__).parent / "Chinook.db").absolute()
 
 # Replicate CONSTANTS
-MODEL = "stability-ai/stable-diffusion"
-VERSION = "db21e45d3f7023abc2a46ee38a23973f6dce16bb082a930b0c49861f96d1e5bf"
+MODEL = "stability-ai/sdxl"
+VERSION = "a00d0b7dcbb9c3fbb34ba87d2d5b46c56969c84a628bf778a7fdaec30b1b99c5"
 
 def build_prompt(user_input):
     # Placeholder. Modify as required.
