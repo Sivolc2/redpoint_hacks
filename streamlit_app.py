@@ -49,6 +49,10 @@ with tabs[0]:
         user_input = st.text_input("Add an item to your visualizer")
         output_url = version.predict(
             prompt = user_input)[0]
+        
+        # Display the image in the Streamlit app
+        st.image(output_url, caption='Generated Image', use_column_width=True)
+
         # yourfunction(user_input)
         # if not user_input:
         #     user_input = prefilled
