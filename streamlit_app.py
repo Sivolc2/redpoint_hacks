@@ -7,8 +7,7 @@ from streamlit.components.v1 import html
 DB_PATH = (Path(__file__).parent / "Chinook.db").absolute()
 
 def render_mermaid_with_images(graph_definition):
-    st.write(
-        f"""
+    my_html = f"""
         <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
         <script src="./mermaid_with_images.js"></script>
         <div id="mermaid-chart"></div>
@@ -16,9 +15,12 @@ def render_mermaid_with_images(graph_definition):
             var graphDefinition = `{graph_definition}`;
             renderMermaid("mermaid-chart", graphDefinition);
         </script>
-        """,
-        unsafe_allow_html=True,
-    )
+        """
+    # st.write(
+    #     s,
+    #     unsafe_allow_html=True,
+    # )
+    html(my_html)
 
 # st.title("🦜 LangChain: Chat with search")
 st.set_page_config(
