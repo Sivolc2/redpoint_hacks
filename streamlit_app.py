@@ -120,6 +120,8 @@ with tabs[0]:
                         A-->C
                         B-->C
                         B-->A
+                        C-->A
+                        C--B
                 `
                 var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
             </script>
