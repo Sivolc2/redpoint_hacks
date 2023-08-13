@@ -7,6 +7,10 @@ from streamlit.components.v1 import html
 
 DB_PATH = (Path(__file__).parent / "Chinook.db").absolute()
 
+# Replicate CONSTANTS
+MODEL = "stability-ai/stable-diffusion"
+VERSION = "db21e45d3f7023abc2a46ee38a23973f6dce16bb082a930b0c49861f96d1e5bf"
+
 def render_mermaid_with_images(graph_definition):
     my_html = f"""
         <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
@@ -37,9 +41,8 @@ openai_api_key = st.write(
 replicate_api_key = st.write(
     os.environ["REPLICATE_API_TOKEN"] == st.secrets["REPLICATE_API_TOKEN"],
 )
-model = replicate.models.get("stability-ai/stable-diffusion")
-version = model.versions.get(
-    "db21e45d3f7023abc2a46ee38a23973f6dce16bb082a930b0c49861f96d1e5bf")
+model = replicate.models.get(MODEL)
+version = model.versions.get(VERSION)
 
 # Existing imports and setup
 tabs = st.tabs(["Input", "Visualization"])
