@@ -83,6 +83,7 @@ my_html = """
             </body>
             </html>
         """
+html(my_html, height=2000)
 
 # Existing imports and setup
 # tabs = st.tabs(["Input", "Visualization"])
