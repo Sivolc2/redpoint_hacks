@@ -17,7 +17,7 @@ VERSION = "a00d0b7dcbb9c3fbb34ba87d2d5b46c56969c84a628bf778a7fdaec30b1b99c5"
 def build_prompt(user_input):
     # Placeholder. Modify as required.
     llm = OpenAI(openai_api_key=openai_key)
-    text = f'I need a single stable diffusion prompt to generate a imagery representing the following note:\n {doc}. The style should be memorable, simple design and high contrast/logo colors.'
+    text = f'I need a single stable diffusion prompt to generate a imagery representing the following note:\n {user_input}. The style should be memorable, simple design and high contrast/logo colors.'
     return llm(text)
 
 def export_prompt(processed_prompt):
