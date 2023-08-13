@@ -7,7 +7,7 @@ import streamlit as st
 from streamlit.components.v1 import html
 
 DB_PATH = (Path(__file__).parent / "Chinook.db").absolute()
-load_dotenv()
+
 openai_key = os.getenv("OPENAI_API_KEY")
 
 # Replicate CONSTANTS
