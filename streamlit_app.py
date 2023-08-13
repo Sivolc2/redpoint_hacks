@@ -1,7 +1,7 @@
 from pathlib import Path
 import os
 import replicate
-from langchain.llms import OpenAI
+# from langchain.llms import OpenAI
 import streamlit as st
 from streamlit.components.v1 import html
 
@@ -15,9 +15,10 @@ VERSION = "a00d0b7dcbb9c3fbb34ba87d2d5b46c56969c84a628bf778a7fdaec30b1b99c5"
 
 def build_prompt(user_input):
     # Placeholder. Modify as required.
-    llm = OpenAI(openai_api_key=openai_key)
-    text = f'I need a single stable diffusion prompt to generate a imagery representing the following note:\n {user_input}. The style should be memorable, simple design and high contrast/logo colors.'
-    return llm(text)
+    # llm = OpenAI(openai_api_key=openai_key)
+    # text = f'I need a single stable diffusion prompt to generate a imagery representing the following note:\n {user_input}. The style should be memorable, simple design and high contrast/logo colors.'
+    # llm(text)
+    return user_input
 
 # st.title("🦜 LangChain: Chat with search")
 st.set_page_config(
@@ -112,7 +113,7 @@ with tabs[0]:
                 };
         """ + f"""
     
-                var graphDefinition = `graph LR; YourNewNote-->SomeIcon(<img src='{output_url}' width='100' height='100' />)-->YourNewNote-->SomeIcon(<img src='{output_url}' width='100' height='100' />);`;
+                var graphDefinition = `graph LR; YourNewNote-->SomeIcon(<img src='{output_url}' width='250' height='250' />)-->YourNewNote-->SomeIcon(<img src='{output_url}' width='250' height='250' />);`;
                 var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
             </script>
 
