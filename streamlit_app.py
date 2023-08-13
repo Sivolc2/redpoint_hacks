@@ -80,7 +80,7 @@ with tabs[0]:
                 };
         """ + f"""
     
-                var graphDefinition = `graph LR; YourNewNote-->SomeIcon(<img src='{output_url}' width='100' height='100' />)`;
+                var graphDefinition = `graph LR; YourNewNote-->SomeIcon(<img src='{output_url}' width='100' height='100' />) YourNewNote-->SomeIcon(<img src='{output_url}' width='100' height='100' />) YourNewNote-->SomeIcon(<img src='{output_url}' width='100' height='100' />) YourNewNote-->SomeIcon(<img src='{output_url}' width='100' height='100' />)`;
                 var graphDefinition2; // This variable is declared but not used in your provided script.
                 var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
             </script>
