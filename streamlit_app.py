@@ -33,7 +33,8 @@ tabs = st.tabs(["Input", "Visualization"])
 with tabs[0]:
     with st.form(key="form"):
         user_input = st.text_input("Add an item to your visualizer")
-        
+        submit_clicked = st.form_submit_button("Build visualization")
+
         if user_input:
             processed_prompt = build_prompt(user_input)
             export_prompt(processed_prompt)
