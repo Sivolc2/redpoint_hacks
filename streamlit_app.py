@@ -93,10 +93,13 @@ user_input = st.text_input("Add an item to your visualizer")
 html(my_html, height=2000)
 # submit_clicked = st.form_submit_button("Build visualization")
 if user_input:
+    st.write('Converting into a Stable Diffusion prompt...')
     processed_prompt = build_prompt(user_input)
+    st.write('Sending prompt to Stable Diffusion...')
     output_url = version.predict(
         prompt = processed_prompt)[0]
 
+    st.write('Building Chart...')
     # Fetch the image from the URL
     response = requests.get(output_url, stream=True)
     img = Image.open(response.raw)
@@ -109,7 +112,6 @@ if user_input:
     img.thumbnail((max_width, max_height))
     # Display the image in the Streamlit app
     # st.image(img, caption='Your Generated Image', use_column_width=False)
-
 
     my_html = """
             <!DOCTYPE html>
