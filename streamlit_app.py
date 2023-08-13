@@ -19,6 +19,7 @@ def build_prompt(user_input):
     # Placeholder. Modify as required.
     # llm = OpenAI(openai_api_key=openai_key)
     # text = f'I need a single stable diffusion prompt to generate a imagery representing the following note:\n {user_input}. The style should be memorable, simple design and high contrast/logo colors.'
+
     # llm(text)
     return user_input
 
@@ -152,7 +153,7 @@ with tabs[0]:
                     </body>
                     </html>
                 """
-        st.markdown(my_html, unsafe_allow_html=True)
-        # html(my_html)
+        # st.markdown(my_html, unsafe_allow_html=True)
+        html(my_html)
 
 # with tabs[1]:
