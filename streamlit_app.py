@@ -67,8 +67,8 @@ my_html = """
                 };
         """ + f"""
                 var graphDefinition = `graph LR; 
-                        A[<img src='https://replicate.delivery/pbxt/ncdFnNBHt9ZmFBxJCwHE9umHT0eW9h7UyqKwp1gKUO7eFfyiA/out-0.png' width='250' height='250'>]
-                        B[<img src='https://replicate.delivery/pbxt/9nztfyP23SQZAi99TTaH2aeRmrj7cX6mdSDqmQ2FL7yDHfyiA/out-0.png' width='250' height='250'>]
+                        B[<img src='https://replicate.delivery/pbxt/ncdFnNBHt9ZmFBxJCwHE9umHT0eW9h7UyqKwp1gKUO7eFfyiA/out-0.png' width='250' height='250'>]
+                        A[<img src='https://replicate.delivery/pbxt/9nztfyP23SQZAi99TTaH2aeRmrj7cX6mdSDqmQ2FL7yDHfyiA/out-0.png' width='250' height='250'>]
                         C[<img src='https://replicate.delivery/pbxt/C4lFzYnkcj68IFm9aqPd7G0XyCukmKsBgy15HfN7Zef5SelFB/out-0.png' width='250' height='250'>]
                         D[<img src='https://replicate.delivery/pbxt/fKZ6nSHDcr0GTCAeQXQ0qaFDCGCIO1G3qbkJzSprQORdKfyiA/out-0.png' width='250' height='250'>]
                         E[<img src='https://replicate.delivery/pbxt/ER8RVkL3a6qdGhZPDqkzlEEKsgi14SG8lV9PE9YfGCkllvsIA/out-0.png' width='250' height='250'>]
@@ -140,8 +140,8 @@ if user_input:
                     };
             """ + f"""
                     var graphDefinition = `graph LR; 
-                            A[<img src='https://replicate.delivery/pbxt/ncdFnNBHt9ZmFBxJCwHE9umHT0eW9h7UyqKwp1gKUO7eFfyiA/out-0.png' width='250' height='250'>]
-                            B[<img src='https://replicate.delivery/pbxt/9nztfyP23SQZAi99TTaH2aeRmrj7cX6mdSDqmQ2FL7yDHfyiA/out-0.png' width='250' height='250'>]
+                            B[<img src='https://replicate.delivery/pbxt/ncdFnNBHt9ZmFBxJCwHE9umHT0eW9h7UyqKwp1gKUO7eFfyiA/out-0.png' width='250' height='250'>]
+                            A[<img src='https://replicate.delivery/pbxt/9nztfyP23SQZAi99TTaH2aeRmrj7cX6mdSDqmQ2FL7yDHfyiA/out-0.png' width='250' height='250'>]
                             C[<img src='https://replicate.delivery/pbxt/C4lFzYnkcj68IFm9aqPd7G0XyCukmKsBgy15HfN7Zef5SelFB/out-0.png' width='250' height='250'>]
                             D[<img src='https://replicate.delivery/pbxt/fKZ6nSHDcr0GTCAeQXQ0qaFDCGCIO1G3qbkJzSprQORdKfyiA/out-0.png' width='250' height='250'>]
                             E[<img src='https://replicate.delivery/pbxt/ER8RVkL3a6qdGhZPDqkzlEEKsgi14SG8lV9PE9YfGCkllvsIA/out-0.png' width='250' height='250'>]
