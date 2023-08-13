@@ -9,7 +9,7 @@ DB_PATH = (Path(__file__).parent / "Chinook.db").absolute()
 def render_mermaid_with_images(graph_definition):
     my_html = f"""
         <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
-        <script src="./mermaid_with_images.js"></script>
+        <script src="https://raw.githubusercontent.com/Sivolc2/redpoint_hacks/main/mermaid_with_images.js"></script>
         <div id="mermaid-chart"></div>
         <script>
             var graphDefinition = `{graph_definition}`;
