@@ -37,7 +37,39 @@ version = model.versions.get(VERSION)
 output_url = ''
 
 ## Base HTML will be initial pre-build nodes from Obsidian
-my_html = ''
+# my_html = """
+#         <!DOCTYPE html>
+#             <html lang="en">
+#             <head>
+#                 <!-- You might want to include meta and other tags here. -->
+#             </head>
+#             <body>
+
+#             <div id="app"></div> <!-- This is where the Mermaid graph will render. -->
+
+#             <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
+
+#             <!-- Inlined JavaScript from mermaid_graph.js -->
+#             <script type="text/javascript">
+#                 var mermaidAPI = mermaid.mermaidAPI;
+
+#                 mermaidAPI.initialize({
+#                 startOnLoad: false
+#                 });
+
+#                 var element = document.getElementById("app");
+#                 var insertSvg = function(svgCode, bindFunctions) {
+#                 element.innerHTML = svgCode;
+#                 };
+#         """ + f"""
+    
+#                 var graphDefinition = `graph LR; YourNewNote-->SomeIcon(<img src='{output_url}' width='100' height='100' />)-->YourNewNote-->SomeIcon(<img src='{output_url}' width='100' height='100' />);`;
+#                 var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
+#             </script>
+
+#             </body>
+#             </html>
+#         """
 
 # Existing imports and setup
 tabs = st.tabs(["Input", "Visualization"])
