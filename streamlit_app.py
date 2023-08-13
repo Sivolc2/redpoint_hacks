@@ -85,7 +85,7 @@ my_html = """
         """
 
 # Existing imports and setup
-tabs = st.tabs(["Input", "Visualization"])
+# tabs = st.tabs(["Input", "Visualization"])
 
 # with tabs[0]:
     # with st.form(key="form"):
@@ -155,6 +155,6 @@ if user_input:
                 </html>
             """
     # st.markdown(my_html, unsafe_allow_html=True)
-    html(my_html)
+    html(my_html, height=2000)
 
 # with tabs[1]:
