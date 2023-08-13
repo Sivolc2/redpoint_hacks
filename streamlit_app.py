@@ -35,6 +35,8 @@ replicate_api_key = st.write(
 model = replicate.models.get(MODEL)
 version = model.versions.get(VERSION)
 output_url = ''
+
+## Base HTML will be initial pre-build nodes from Obsidian
 my_html = ''
 
 # Existing imports and setup
@@ -48,7 +50,7 @@ with tabs[0]:
             prompt = processed_prompt)[0]
         
         # Display the image in the Streamlit app
-        st.image(output_url, caption='Your Generated Image', use_column_width=True)
+        st.image(output_url, caption='Your Generated Image', use_column_width=False)
 
         submit_clicked = st.form_submit_button("Build visualization")
 
@@ -78,7 +80,7 @@ with tabs[0]:
                 };
         """ + f"""
     
-                var graphDefinition = `graph LR; Nodetext-->SomeIcon(<img src='{output_url}' width='100' height='100' />)`;
+                var graphDefinition = `graph LR; SomeIcon(<img src='{output_url}' width='100' height='100' />)-->SomeIcon(<img src='{output_url}' width='100' height='100' />)`;
                 var graphDefinition2; // This variable is declared but not used in your provided script.
                 var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
             </script>
